@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% load static %}
+<head>
+    <title> Blog </title>
+</head>
+<body>
+    <header>
+        <h1> <a href="{% url 'home' %}"> Météo </a> </h1>
+        <link rel="stylesheet" href="{% static 'css/base.css' %}" >
+    </header>
+    <div>
+        {% block content %} 
+        {% endblock content %}
+    </div>
+</body>
+</html>
