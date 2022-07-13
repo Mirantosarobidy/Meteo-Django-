@@ -1,4 +1,6 @@
 from django.db import models
+from django.urls import reverse
+
 
 class Editor(models.Model):
     title = models.CharField(max_length=200)
@@ -10,3 +12,7 @@ class Editor(models.Model):
     
     def __str__(self):
         return self.title
+    
+    def get_absolute_url(self):
+        return reverse("editor_detail", args=[str(self.id)])
+    
